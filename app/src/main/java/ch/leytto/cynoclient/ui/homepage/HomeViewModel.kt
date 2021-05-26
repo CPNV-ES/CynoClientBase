@@ -1,13 +1,12 @@
-package ch.leytto.cynoclient.ui.home
+package ch.leytto.cynoclient.ui.homepage
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
-
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is Home Page"
     }
     val text: LiveData<String> = _text
 }
