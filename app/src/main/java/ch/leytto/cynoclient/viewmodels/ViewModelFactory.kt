@@ -1,4 +1,4 @@
-package ch.leytto.cynoclient.viewmodels
+ package ch.leytto.cynoclient.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import ch.leytto.cynoclient.model.AbstractRepository

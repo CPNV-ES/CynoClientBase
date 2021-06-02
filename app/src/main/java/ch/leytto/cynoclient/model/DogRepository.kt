@@ -9,6 +9,8 @@ class DogRepository(private val dogDao: DogDao) : AbstractRepository() {
 
     // Room executes all queries on a separate thread.
     // Observed Flow will notify the observer when the data has changed.
+
+    //GRR : get all dogs and put it as a list
     val allDogs: List<Dog> = dogDao.getDogs()
 
     // By default Room runs suspend queries off the main thread, therefore, we don't need to

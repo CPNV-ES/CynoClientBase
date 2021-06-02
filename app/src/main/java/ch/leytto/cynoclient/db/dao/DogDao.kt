@@ -7,6 +7,8 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DogDao {
 
+    //GRR : Write database request here
+
     @Query("SELECT * FROM dogs")
     fun getDogs(): List<Dog>
 
