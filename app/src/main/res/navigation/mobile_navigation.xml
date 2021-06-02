@@ -22,4 +22,10 @@
         android:name="ch.leytto.cynoclient.ui.homepage.HomeFragment"
         android:label="@string/nav_footer_home"
         tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_dogs"
+        android:name="ch.leytto.cynoclient.ui.dogs.DogsFragment"
+        android:label="@string/nav_footer_home"
+        tools:layout="@layout/fragment_dogs" />
 </navigation>

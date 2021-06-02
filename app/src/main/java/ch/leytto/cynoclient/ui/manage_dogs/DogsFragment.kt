@@ -22,7 +22,7 @@ class DogsFragment : Fragment() {
         dogsViewModel =
             ViewModelProvider(this).get(DogsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_manage_dogs, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val textView: TextView = root.findViewById(R.id.text_dogs)
         dogsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
