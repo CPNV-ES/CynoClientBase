@@ -22,4 +22,5 @@
 
     <string name="menu_manage_clients">Gérer les clients</string>
     <string name="menu_manage_dogs">Gérer les chiens</string>
+    <string name="add_dogs">Ajouter un chien</string>
 </resources>
