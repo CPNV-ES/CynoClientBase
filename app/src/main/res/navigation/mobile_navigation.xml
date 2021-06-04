@@ -28,4 +28,10 @@
         android:name="ch.leytto.cynoclient.ui.dogs.DogsFragment"
         android:label="@string/nav_footer_home"
         tools:layout="@layout/fragment_dogs" />
+
+    <fragment
+        android:id="@+id/form_create_dog"
+        android:name="ch.leytto.cynoclient.ui.form_create_dog.FormCreateDogFragment"
+        android:label="@string/form_create_dog"
+        tools:layout="@layout/fragment_form_create_dog" />
 </navigation>

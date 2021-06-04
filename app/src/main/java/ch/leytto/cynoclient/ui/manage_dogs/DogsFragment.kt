@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import ch.leytto.cynoclient.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DogsFragment : Fragment() {
 
@@ -26,6 +28,12 @@ class DogsFragment : Fragment() {
         dogsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        val mFab = root.findViewById<FloatingActionButton>(R.id.fab_redirect_to_new_dog)
+        mFab.setOnClickListener {
+            root.findNavController().navigate(R.id.form_create_dog)
+        }
+
         return root
     }
 

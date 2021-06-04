@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+
+tools:context=".ui.form_create_dog.FormCreateDogFragment">
+
+<Button
+    android:id="@+id/button_create_dog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="160dp"
+    android:layout_marginTop="40dp"
+    android:text="@string/button_create_dog"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/checkbox_is_dead" />
+
+<EditText
+    android:id="@+id/input_dog_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="100dp"
+    android:layout_marginTop="28dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:text="Nom du chien"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_dog_color" />
+
+<EditText
+    android:id="@+id/input_dog_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="137dp"
+    android:layout_marginTop="21dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:text="Nom du chien"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_dog_name" />
+
+<RadioGroup
+    android:id="@+id/radioGroup"
+    android:layout_width="241dp"
+    android:layout_height="100dp"
+    android:layout_marginStart="108dp"
+    android:layout_marginTop="32dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/input_dog_name">
+
+    <RadioButton
+        android:id="@+id/radio_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/radio_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton" />
+
+</RadioGroup>
+
+<TextView
+    android:id="@+id/text_view_birthdate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="185dp"
+    android:layout_marginTop="16dp"
+    android:text="date de naissance"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+<EditText
+    android:id="@+id/input_birthdate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="136dp"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="date"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_birthdate" />
+
+<CheckBox
+    android:id="@+id/checkbox_sterilized"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="194dp"
+    android:layout_marginTop="12dp"
+    android:text="CheckBox"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/input_birthdate" />
+
+<CheckBox
+    android:id="@+id/checkbox_chemical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="194dp"
+    android:layout_marginTop="17dp"
+    android:text="CheckBox"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/checkbox_sterilized" />
+
+<TextView
+    android:id="@+id/text_view_dog_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="198dp"
+    android:layout_marginTop="35dp"
+    android:text="Nom du chien"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/checkbox_chemical" />
+
+<CheckBox
+    android:id="@+id/checkbox_is_dead"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Mort ?"
+    app:layout_constraintTop_toBottomOf="@id/input_dog_color"
+    tools:layout_editor_absoluteX="205dp" />
+
+<TextView
+    android:id="@+id/text_view_dog_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="198dp"
+    android:layout_marginTop="11dp"
+    android:text="Nom du chien"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/scroll_view_client" />
+
+<ScrollView
+    android:id="@+id/scroll_view_client"
+    android:layout_width="484dp"
+    android:layout_height="143dp"
+    android:layout_marginTop="13dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_client">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</ScrollView>
+
+<TextView
+    android:id="@+id/text_view_client"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="213dp"
+    android:layout_marginTop="16dp"
+    android:text="Clients"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

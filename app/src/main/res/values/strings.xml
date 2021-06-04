@@ -23,4 +23,8 @@
     <string name="menu_manage_clients">Gérer les clients</string>
     <string name="menu_manage_dogs">Gérer les chiens</string>
     <string name="add_dogs">Ajouter un chien</string>
+
+    <!-- string for form_create_dog -->
+    <string name="form_create_dog">Créer un chien</string>
+    <string name="button_create_dog">Créer le chien</string>
 </resources>
