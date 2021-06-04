@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 interface DogDao {
 
     @Query("SELECT * FROM dogs")
-    fun getDogs(): LiveData<List<Dog>>
+    fun getDogs(): Flow<List<Dog>>
 
     @Query("SELECT * FROM dogs WHERE id = :id")
     suspend fun getDog(id: Int): Dog

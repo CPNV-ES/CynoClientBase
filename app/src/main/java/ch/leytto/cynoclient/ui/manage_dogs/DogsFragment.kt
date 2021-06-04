@@ -7,18 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.observe
 import ch.leytto.cynoclient.CynoClientApplication
 import ch.leytto.cynoclient.R
 import ch.leytto.cynoclient.db.entities.Dog
 import ch.leytto.cynoclient.viewmodels.DogViewModel
 import ch.leytto.cynoclient.viewmodels.ViewModelFactory
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 
 class DogsFragment : Fragment() {
 
@@ -32,44 +26,28 @@ class DogsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dogsViewModel =
-            ViewModelProvider(this).get(DogsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_manage_dogs, container, false)
         val textView: TextView = root.findViewById(R.id.text_dogs)
-        dogsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         insertDog();
-
+        listDog();
         return root
     }
 
-    fun insertDog() = GlobalScope.async {
-        launch {
-            val d = Dog(15,"Andi",true,"31.03.2222,",true,false,"brown",false,2,1,1)
-            dogViewModel.insert(d)
-            dogViewModel.AllDogs.observe(viewLifecycleOwner, Observer<List<Dog>>{
-                it.forEach()
-                {
-                    println(it.noun)
-                }
-            })
-        }
-
-
-
+    fun insertDog()  {
+        val d = Dog(0,"MONPETITCHOU",true,"31.03.2222,",true,false,"brown",false,2,1,1)
+        dogViewModel.insert(d)
     }
-    fun getDogs(root: View) = GlobalScope.async {
-        println("GetDogs...")
-        launch {
 
-          /*  dogViewModel.AllDogs.forEach(){ dogs ->
-                dogs.let { println(it.noun) }
-            }*/
+
+    fun listDog()
+    {
+        //Using observer to do something when data are modified
+        //Observer doesn't need a coroutin cause room already do it
+        dogViewModel.AllDogs.observe(viewLifecycleOwner) { dogs ->
+            for (dog in dogs) {
+                println(dog.noun)
+            }
         }
-
-
-
     }
 
 

@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 
 class DogViewModel(private val repository: DogRepository) : ViewModel() {
 
-    val AllDogs: LiveData<List<Dog>> = repository.allDogs
+    val AllDogs: LiveData<List<Dog>> = repository.allDogs.asLiveData()
 
     fun insert(dog: Dog) = viewModelScope.launch {
         repository.insert(dog)
