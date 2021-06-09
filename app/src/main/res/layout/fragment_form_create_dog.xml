@@ -23,7 +23,7 @@
                 android:id="@+id/text_view_breeds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Races" />
+                android:text="@string/form_create_dog_text_races" />
 
             <ListView
                 android:id="@+id/list_view_breeds"
@@ -34,7 +34,7 @@
                 android:id="@+id/text_view_clients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Clients" />
+                android:text="@string/form_create_dog_text_clients" />
 
             <ListView
                 android:id="@+id/list_view_clients"
@@ -45,7 +45,7 @@
                 android:id="@+id/text_view_dog_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nom du chien" />
+                android:text="@string/form_create_dog_text_name" />
 
             <EditText
                 android:id="@+id/input_dog_name"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Nom du chien" />
+                android:text="@string/form_create_dog_input_name" />
 
             <RadioGroup
             android:id="@+id/radioGroup"
@@ -64,13 +64,13 @@
                     android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male" />
+                    android:text="@string/form_create_dog_radio_male" />
 
                 <RadioButton
                     android:id="@+id/radio_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Femelle" />
+                    android:text="@string/form_create_dog_radio_female" />
 
             </RadioGroup>
 
@@ -78,7 +78,7 @@
                 android:id="@+id/text_view_birthdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="date de naissance" />
+                android:text="@string/form_create_dog_text_birthdate" />
 
             <EditText
                 android:id="@+id/input_birthdate"
@@ -91,19 +91,19 @@
                 android:id="@+id/checkbox_sterilized"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stérilizé" />
+                android:text="@string/form_create_dog_checkbox_sterilized" />
 
             <CheckBox
                 android:id="@+id/checkbox_chemical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chemical" />
+                android:text="@string/form_create_dog_checkbox_chemical" />
 
             <TextView
                 android:id="@+id/text_view_dog_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Couleur du chien" />
+                android:text="@string/form_create_dog_text_color" />
 
             <EditText
                 android:id="@+id/input_dog_color"
@@ -111,13 +111,13 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Couleur du chien" />
+                android:text="@string/form_create_dog_input_color" />
 
             <CheckBox
                 android:id="@+id/checkbox_is_dead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mort ?"/>
+                android:text="@string/form_create_dog_checkbox_is_dead"/>
 
             <Button
                 android:id="@+id/button_create_dog"
