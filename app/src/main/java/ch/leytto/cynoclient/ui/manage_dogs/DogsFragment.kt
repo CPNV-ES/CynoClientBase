@@ -58,6 +58,7 @@ class DogsFragment : Fragment() {
     fun insertDog()  {
         val d = Dog(0,"MONPETITCHOU",true,"31.03.2222,",true,false,"brown",false,2,1,1)
         dogViewModel.insert(d)
+        println()
     }
 
 
