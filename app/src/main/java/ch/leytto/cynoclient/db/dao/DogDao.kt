@@ -1,5 +1,6 @@
 package ch.leytto.cynoclient.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import ch.leytto.cynoclient.db.entities.Dog
 import kotlinx.coroutines.flow.Flow
@@ -8,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 interface DogDao {
 
     @Query("SELECT * FROM dogs")
-    fun getDogs(): List<Dog>
+    fun getDogs(): Flow<List<Dog>>
 
     @Query("SELECT * FROM dogs WHERE id = :id")
     suspend fun getDog(id: Int): Dog

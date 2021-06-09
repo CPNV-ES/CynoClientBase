@@ -21,6 +21,7 @@
         android:id="@+id/nav_home_page"
         android:name="ch.leytto.cynoclient.ui.homepage.HomeFragment"
         android:label="@string/nav_footer_home"
+        android:tag="homepage"
         tools:layout="@layout/fragment_home" />
 
     <fragment
