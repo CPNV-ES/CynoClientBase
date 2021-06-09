@@ -22,13 +22,13 @@ class DogListAdapter : ListAdapter<Dog, DogListAdapter.DogViewHolder>(DogsCompar
     class DogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameItemView: TextView = itemView.findViewById(R.id.name)
 
-        fun bind(client: Dog?) {
-            nameItemView.text = client?.noun
+        fun bind(dog: Dog?) {
+            nameItemView.text = dog?.noun
         }
 
         companion object {
             fun create(parent: ViewGroup): DogViewHolder {
-                val view: View = LayoutInflater.from(parent.context).inflate(R.layout.client_adapter, parent, false)
+                val view: View = LayoutInflater.from(parent.context).inflate(R.layout.dog_adapter, parent, false)
                 return DogViewHolder(view)
             }
         }
