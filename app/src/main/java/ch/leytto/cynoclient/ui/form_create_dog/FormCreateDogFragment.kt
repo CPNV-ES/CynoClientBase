@@ -22,10 +22,6 @@ class FormCreateDogFragment : Fragment() {
         formCreateDogViewModel =
             ViewModelProvider(this).get(FormCreateDogViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_form_create_dog, container, false)
-        val textView: TextView = root.findViewById(R.id.text_form_create_dog)
-        formCreateDogViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 

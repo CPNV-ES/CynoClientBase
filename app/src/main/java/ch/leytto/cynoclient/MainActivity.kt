@@ -50,11 +50,6 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         navBottomView.setupWithNavController(navController)
 
-        toolbar.setNavigationOnClickListener {
-            // Handle navigation icon press
-            drawerLayout.openDrawer(Gravity.LEFT);
-        }
-
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.light_mode -> {
