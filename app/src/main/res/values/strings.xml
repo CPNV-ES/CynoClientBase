@@ -23,4 +23,22 @@
     <string name="menu_manage_clients">Gérer les clients</string>
     <string name="menu_manage_dogs">Gérer les chiens</string>
     <string name="add_dogs">Ajouter un chien</string>
+
+    <!-- string for form_create_dog -->
+    <string name="form_create_dog">Créer un chien</string>
+    <string name="button_create_dog">Créer le chien</string>
+    <string name="form_create_dog_text_races">Races</string>
+    <string name="form_create_dog_text_clients">Clients</string>
+    <string name="form_create_dog_text_name">Nom du chien</string>
+    <string name="form_create_dog_input_name">Nom du chien</string>
+    <string name="form_create_dog_radio_male">Male</string>
+    <string name="form_create_dog_radio_female">Femelle</string>
+    <string name="form_create_dog_text_birthdate">Date de naissance</string>
+    <string name="form_create_dog_input_birthdate">Date de naissance</string>
+    <string name="form_create_dog_checkbox_sterilized">Stérilizé</string>
+    <string name="form_create_dog_checkbox_chemical">Chemical</string>
+    <string name="form_create_dog_text_color">Couleur du chien</string>
+    <string name="form_create_dog_input_color">Couleur du chien</string>
+    <string name="form_create_dog_checkbox_is_dead">Mort ?</string>
+
 </resources>

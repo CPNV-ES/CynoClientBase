@@ -24,4 +24,3 @@ class BreedViewModel(private val repository: BreedRepository) : ViewModel() {
     }
 
 }
-

@@ -2,6 +2,7 @@ package ch.leytto.cynoclient
 
 import android.app.Application
 import ch.leytto.cynoclient.db.CynoClientRoomDatabase
+import ch.leytto.cynoclient.model.BreedRepository
 import ch.leytto.cynoclient.model.DogRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -14,4 +15,5 @@ class CynoClientApplication: Application() {
     // rather than when the application starts
     val database by lazy { CynoClientRoomDatabase.getDatabase(this, applicationScope) }
     val dogRepository by lazy { DogRepository(database.dogDao()) }
+    val breedRepository by lazy { BreedRepository(database.breedDao()) }
 }

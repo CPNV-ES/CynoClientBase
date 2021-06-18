@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import ch.leytto.cynoclient.db.dao.BreedDao
 import ch.leytto.cynoclient.db.dao.ClientDao
 import ch.leytto.cynoclient.db.dao.DogDao
 import ch.leytto.cynoclient.db.entities.*
@@ -17,6 +18,7 @@ abstract class CynoClientRoomDatabase : RoomDatabase() {
     // DAOs
     abstract fun dogDao(): DogDao
     abstract fun clientDao(): ClientDao
+    abstract fun breedDao(): BreedDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the

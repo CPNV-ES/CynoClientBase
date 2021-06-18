@@ -45,15 +45,11 @@ class MainActivity : AppCompatActivity() {
             R.id.nav_manage_dogs,
             R.id.nav_manage_clients,
             R.id.nav_dogs,
+            R.id.form_create_dog,
             R.id.nav_home_page), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         navBottomView.setupWithNavController(navController)
-
-        toolbar.setNavigationOnClickListener {
-            // Handle navigation icon press
-            drawerLayout.openDrawer(Gravity.LEFT);
-        }
 
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
