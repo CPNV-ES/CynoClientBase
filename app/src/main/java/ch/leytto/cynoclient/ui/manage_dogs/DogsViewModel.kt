@@ -13,11 +13,5 @@ import kotlinx.coroutines.launch
 class DogsViewModel : ViewModel() {
 
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Dogs Fragment"
-    }
-    val text: LiveData<String> = _text
-
-
 }
 

@@ -12,7 +12,10 @@ import androidx.navigation.findNavController
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ch.leytto.cynoclient.CynoClientApplication
+import ch.leytto.cynoclient.DogListAdapter
 import ch.leytto.cynoclient.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ch.leytto.cynoclient.db.entities.Dog
@@ -24,6 +27,7 @@ class DogsFragment : Fragment() {
     private val dogViewModel: DogViewModel by viewModels {
         ViewModelFactory((requireActivity().application as CynoClientApplication).dogRepository)
     }
+
     private lateinit var dogsViewModel: DogsViewModel
 
     override fun onCreateView(
@@ -31,46 +35,31 @@ class DogsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        dogsViewModel =
+            ViewModelProvider(this).get(DogsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_manage_dogs, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dogs)
-        dogsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        val recyclerView = root.findViewById<RecyclerView>(R.id.list_dogs)
+        val adapter = DogListAdapter()
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
+        dogViewModel.AllDogs.observe(viewLifecycleOwner, Observer { dogs ->
+            dogs?.let { adapter.submitList(it) }
         })
+
 
 
         val mFab = root.findViewById<FloatingActionButton>(R.id.fab_redirect_to_new_dog)
         mFab.setOnClickListener {
-            val fragmentManager = activity?.supportFragmentManager
-            val fragment = fragmentManager?.findFragmentById(R.id.nav_manage_dogs)
-            println(fragmentManager)
-            fragmentManager?.commit {
-                replace(R.id.mobile_navigation, fragment!!)
-                setReorderingAllowed(true)
-                addToBackStack("Home")
-            }
+            root.findNavController().navigate(R.id.nav_home_page)
         }
 
-        insertDog();
-        listDog();
+        //insertDog();
         return root
     }
 
-    fun insertDog()  {
+    private fun insertDog()  {
         val d = Dog(0,"MONPETITCHOU",true,"31.03.2222,",true,false,"brown",false,2,1,1)
         dogViewModel.insert(d)
     }
-
-
-    fun listDog()
-    {
-        //Using observer to do something when data are modified
-        //Observer doesn't need a coroutin cause room already do it
-        dogViewModel.AllDogs.observe(viewLifecycleOwner) { dogs ->
-            for (dog in dogs) {
-                println(dog.noun)
-            }
-        }
-    }
-
 
 }
