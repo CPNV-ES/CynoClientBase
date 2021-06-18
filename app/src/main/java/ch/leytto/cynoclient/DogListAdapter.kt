@@ -35,6 +35,7 @@ class DogListAdapter : ListAdapter<Dog, DogListAdapter.DogViewHolder>(DogsCompar
     }
 
     class DogsComparator : DiffUtil.ItemCallback<Dog>() {
+        //check if a change occured
         override fun areItemsTheSame(oldItem: Dog, newItem: Dog): Boolean {
             return oldItem === newItem
         }

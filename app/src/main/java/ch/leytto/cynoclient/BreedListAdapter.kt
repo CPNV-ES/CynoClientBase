@@ -22,6 +22,10 @@ class BreedListAdapter : ListAdapter<Breed, BreedListAdapter.BreedViewHolder>(Br
     class BreedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameItemView: TextView = itemView.findViewById(R.id.name)
 
+        /*
+        * Bind noun to view list (RecyclerView)
+        * @param Breed object
+        * */
         fun bind(breed: Breed?) {
             nameItemView.text = breed?.noun
         }
