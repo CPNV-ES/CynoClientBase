@@ -16,6 +16,7 @@ import ch.leytto.cynoclient.CynoClientApplication
 import ch.leytto.cynoclient.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ch.leytto.cynoclient.db.entities.Dog
+import ch.leytto.cynoclient.ui.form_create_dog.FormCreateDogViewModel
 import ch.leytto.cynoclient.viewmodels.DogViewModel
 import ch.leytto.cynoclient.viewmodels.ViewModelFactory
 
@@ -31,6 +32,8 @@ class DogsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        dogsViewModel =
+            ViewModelProvider(this).get(DogsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_manage_dogs, container, false)
         val textView: TextView = root.findViewById(R.id.text_dogs)
         dogsViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -39,14 +42,7 @@ class DogsFragment : Fragment() {
 
         val mFab = root.findViewById<FloatingActionButton>(R.id.fab_redirect_to_new_dog)
         mFab.setOnClickListener {
-            val fragmentManager = activity?.supportFragmentManager
-            val fragment = fragmentManager?.findFragmentById(R.id.nav_manage_dogs)
-            println(fragmentManager)
-            fragmentManager?.commit {
-                replace(R.id.mobile_navigation, fragment!!)
-                setReorderingAllowed(true)
-                addToBackStack("Home")
-            }
+            root.findNavController().navigate(R.id.form_create_dog)
         }
 
         insertDog();

@@ -33,7 +33,8 @@
     <string name="form_create_dog_input_name">Nom du chien</string>
     <string name="form_create_dog_radio_male">Male</string>
     <string name="form_create_dog_radio_female">Femelle</string>
-    <string name="form_create_dog_text_birthdate">date de naissance</string>
+    <string name="form_create_dog_text_birthdate">Date de naissance</string>
+    <string name="form_create_dog_input_birthdate">Date de naissance</string>
     <string name="form_create_dog_checkbox_sterilized">Stérilizé</string>
     <string name="form_create_dog_checkbox_chemical">Chemical</string>
     <string name="form_create_dog_text_color">Couleur du chien</string>

@@ -10,8 +10,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="100dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,10 +24,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/form_create_dog_text_races" />
 
-            <ListView
-                android:id="@+id/list_view_breeds"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintHeight_max="200dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_view_breeds"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintHeight_max="100dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/text_view_clients"
@@ -36,27 +44,64 @@
                 android:layout_height="wrap_content"
                 android:text="@string/form_create_dog_text_clients" />
 
-            <ListView
-                android:id="@+id/list_view_clients"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintHeight_max="200dp">
 
-            <TextView
-                android:id="@+id/text_view_dog_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/form_create_dog_text_name" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_view_clients"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintHeight_max="100dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <EditText
-                android:id="@+id/input_dog_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/form_create_dog_input_name" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_dog_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/form_create_dog_input_name"
+                    android:textColor="?attr/colorPrimary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_birthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:hint="@string/form_create_dog_input_birthdate"
+                    android:textColor="?attr/colorPrimary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_dog_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/form_create_dog_input_color"
+                    android:textColor="?attr/colorPrimary" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/radio_dog_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -74,19 +119,6 @@
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/text_view_birthdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/form_create_dog_text_birthdate" />
-
-            <EditText
-                android:id="@+id/input_birthdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date" />
-
             <CheckBox
                 android:id="@+id/checkbox_sterilized"
                 android:layout_width="wrap_content"
@@ -99,31 +131,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/form_create_dog_checkbox_chemical" />
 
-            <TextView
-                android:id="@+id/text_view_dog_color"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/form_create_dog_text_color" />
-
-            <EditText
-                android:id="@+id/input_dog_color"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/form_create_dog_input_color" />
-
-            <CheckBox
-                android:id="@+id/checkbox_is_dead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/form_create_dog_checkbox_is_dead"/>
-
             <Button
                 android:id="@+id/button_create_dog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_create_dog" />
+                android:text="@string/button_create_dog"
+                android:layout_marginBottom="1000dp"/>
 
         </LinearLayout>
     </ScrollView>

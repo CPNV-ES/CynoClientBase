@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class BreedViewModel(private val repository: BreedRepository) : ViewModel() {
 
-    val AllDogs: LiveData<List<Breed>> = repository.allDogs.asLiveData()
+    val AllBreeds: LiveData<List<Breed>> = repository.allBreeds.asLiveData()
 
     fun insert(breed: Breed) = viewModelScope.launch {
         repository.insert(breed)
